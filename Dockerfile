@@ -1,9 +1,6 @@
-FROM python:3
+FROM hdgigante/python-opencv:4.9.0-alpine
 
 WORKDIR /opt/webcam-server
 COPY ./mjpg_serve.py ./
-
-RUN apt update
-RUN apt -y install python3-opencv
 
 CMD python3 mjpg_serve.py
