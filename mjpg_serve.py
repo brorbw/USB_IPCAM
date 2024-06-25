@@ -31,19 +31,6 @@ class CamHandler(BaseHTTPRequestHandler):
                     rc, img = capture.read()
                     if not rc:
                         continue
-                    # global imgN1
-                    # global imgN2
-                    # if imgN1 is not None and imgN2 is not None:
-                    #    img = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
-                    # result = diffImg(imgN2, imgN1, img)
-                    #    result = img
-                    # else:
-                    #    result = img
-                    #    img = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
-                    # imgN2 = imgN1
-                    # imgN1 = img
-                    # cv2.circle(img, (320,240),100,255,-1)
-                    # imgRGB = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
                     r, buf = cv2.imencode(".jpg", img)
                     self.wfile.write(bytes("--jpgboundary\r\n", "utf-8"))
                     self.send_header("Content-type", "image/jpeg")
@@ -68,8 +55,8 @@ class CamHandler(BaseHTTPRequestHandler):
 def main():
     global capture
     capture = cv2.VideoCapture(0)
-    capture.set(cv2.CAP_PROP_FRAME_WIDTH, 1080)
-    capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+    capture.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
+    capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
     try:
         server = HTTPServer(("0.0.0.0", 8080), CamHandler)
         print("server started")
