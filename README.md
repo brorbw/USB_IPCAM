@@ -1,16 +1,18 @@
-# RPi_Ipcam
+Originally forked from https://github.com/StevenHickson/RPi_Ipcam/fork
 
-Python 2 camera server by Steven Hickson.
+# Webcam_IPCAM
+
+Turn any webcam into an IP cam using any server
 
 Serves up a simple web page with an MJPG stream from the camera.
 
 Requirements/libraries
-* Python 2
-* OpenCV 2
+* `Python3`
+* `OpenCV 2`
 
-Installation (Raspbian stretch lite):
+Install
 
-```sudo apt-get install python-opencv```
+```pip3 install opencv-python```
 
 Run the server:
 
@@ -18,4 +20,4 @@ Run the server:
 
 Open a web browser to:
 
-```http:\\raspberrypi.local:8080```  (replace with your hostname as appropriate)
+```http://localhost:8080```  (replace with your hostname as appropriate)
