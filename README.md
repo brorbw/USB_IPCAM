@@ -1,4 +1,4 @@
-Originally forked from https://github.com/StevenHickson/RPi_Ipcam/fork
+Originally forked from https://github.com/StevenHickson/RPi_Ipcam
 
 # Webcam_IPCAM
 
